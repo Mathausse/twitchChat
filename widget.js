@@ -85,12 +85,12 @@ function addMessage(data, message){
     const color = data.displayColor || `#${md5(data.displayName).substr(26)}`
     const badges = data.badges.reduce((acc, badge) => acc + `<img src="${badge.url}" class="badge">`, '')
     chat.insertAdjacentHTML('beforeend', /*html*/`<div id="message-${data.msgId}" data-sender="${data.userId}" class="msg" style="--color: ${color}">
-        <div lass="meta">
+        <div class="meta">
             <div class="badges">${badges}</div>
             <div class="name">${data.displayName}</div>
         </div>
         <div class="content">
-            ${message};
+            ${message}
         </div>
     </div>`)
 }
